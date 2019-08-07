@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Tread Lightly</title>
+</head>
+
+<body>
+    <div class="jumbotron">Tread Lightly</div>
+
+    <script src="http://www.webglearth.com/v2/api.js"></script>
+
+    <script>
+        function initialize() {
+            var options = { atmosphere: true, center: [0, 0], zoom: 0 };
+            var earth = new WE.map('earth_div', options);
+            WE.tileLayer('http://tileserver.maptiler.com/nasa/{z}/{x}/{y}.jpg', {
+                minZoom: 0,
+                maxZoom: 5,
+                attribution: 'NASA'
+            }).addTo(earth);
+        }
+
+        //inputs and button functions
+        //input values of the date range and country
+        //form validation function
+        //get request from the api and the data set
+
+    </script>
+    <!-- <title>WebGL Earth API: Satellite</title> -->
+    </head>
+
+    <body onload="initialize()">
+        <div id="earth_div"></div>
+    </body>
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search Carbon Footprint" aria-label="Recipient's username"
+            aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button">Search</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">What is carbon footprint?</h5>
+                    <p class="card-text">A carbon footprint database that provides a user their footprint, a different
+                        country and overall
+                        education on
+                        the enviromental impact.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">What is global hectares?</h5>
+                    <p class="card-text">is a measurement unit for quantifying both the ecological footprint of people
+                        or
+                        activities as well as the biocapacity of the earth or its regions. </p>
+                </div>
+            </div>
+        </div>
+    </div class="col-sm-1">
+    </div>
+
+    </div>
+
+</body>
+
+</html>
