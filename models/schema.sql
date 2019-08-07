@@ -1,5 +1,16 @@
 DROP DATABASE IF EXISTS exampledb;
 CREATE DATABASE exampledb;
+USE exampledb;
+
+CREATE TABLE footprint(
+    id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    country VARCHAR (100) NULL,
+    UN_region VARCHAR (100) NULL,
+    year INTEGER (50) NULL,
+    carbon DECIMAL (10,2) NULL,
+    Percapita GDP (2010 USD) DECIMAL(10,3) NULL,
+    populations INTEGER (50) NOT NULL,
+);
 
 DROP DATABASE IF EXISTS testdb;
 CREATE DATABASE testdb;
