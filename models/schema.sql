@@ -1,14 +1,14 @@
-DROP DATABASE IF EXISTS exampledb;
-CREATE DATABASE exampledb;
-USE exampledb;
+DROP DATABASE IF EXISTS globalFP_db;
+CREATE DATABASE globalFP_db;
+USE globalFP_db;
 
 CREATE TABLE footprint(
     id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     country VARCHAR (100) NULL,
     UN_region VARCHAR (100) NULL,
-    year INTEGER (50) NULL,
-    carbon DECIMAL (10,2) NULL,
-    Percapita GDP (2010 USD) DECIMAL(10,3) NULL,
+    year INTEGER NULL,
+    carbon DECIMAL (20,10) NULL,
+    Percapita_GDP DECIMAL(10,3) NULL,
     populations INTEGER (50) NOT NULL,
 );
 
