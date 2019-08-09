@@ -14,6 +14,38 @@
 <body>
     <div class="jumbotron">Tread Lightly</div>
 
+    <!-- <title>WebGL Earth API: Satellite</title> -->
+
+    <div id="earth_div"></div>
+
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search Carbon Footprint" aria-label="Recipient's username"
+            aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary"  type="button">Search</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">What is carbon footprint?</h5>
+                    <p class="card-text">A carbon footprint database that provides a user their footprint, a different country and overall education on the enviromental impact.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-5">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">What is global hectares?</h5>
+                    <p class="card-text">is a measurement unit for quantifying both the ecological footprint of people or activities as well as the biocapacity of the earth or its regions. </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+
     <script src="http://www.webglearth.com/v2/api.js"></script>
 
     <script>
@@ -27,52 +59,30 @@
             }).addTo(earth);
         }
 
-        //inputs and button functions
-        //input values of the date range and country
-        //form validation function
-        //get request from the api and the data set
+        initialize();
+        
+        // $(document).ready(function(){
 
+        // inputs and button functions
+        // $(".search").on("click", function(event){
+        //     event.preventDefault;
+
+        //     var country = $(".country").val().trim();
+        //     var year = $(".year").val().trim();
+
+        //     $.get("/countrystats", function(res) {
+
+        //     }.then(function(results) {
+
+        //     })
+        // })
+        // input values of the date range and country
+        // form validation function
+        // get request from the api and the data set
+
+        // })
+        
     </script>
-    <!-- <title>WebGL Earth API: Satellite</title> -->
-    </head>
-
-    <body onload="initialize()">
-        <div id="earth_div"></div>
-    </body>
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search Carbon Footprint" aria-label="Recipient's username"
-            aria-describedby="basic-addon2">
-        <div class="input-group-append">
-            <button class="btn btn-outline-secondary" type="button">Search</button>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-5">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">What is carbon footprint?</h5>
-                    <p class="card-text">A carbon footprint database that provides a user their footprint, a different
-                        country and overall
-                        education on
-                        the enviromental impact.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">What is global hectares?</h5>
-                    <p class="card-text">is a measurement unit for quantifying both the ecological footprint of people
-                        or
-                        activities as well as the biocapacity of the earth or its regions. </p>
-                </div>
-            </div>
-        </div>
-    </div class="col-sm-1">
-    </div>
-
-    </div>
 
 </body>
 
