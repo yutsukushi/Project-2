@@ -25,7 +25,8 @@
     <div class="col-sm-1"></div>
   </div>
   <div class="col-sm-10">
-    <form action="POST">
+    {{!-- added this --}}
+    <form method="POST">
       <div class="input-group mb-3">
         <input class="country" type="text" class="form-control" placeholder="Search Carbon Footprint">
         <div class="input-group-append">
@@ -43,16 +44,23 @@
             <thead>
               <tr>
                 <th scope="col">Country</th>
+                <th scope="col">UN Region</th>
                 <th scope="col">Year</th>
                 <th scope="col">Carbon Footprint</th>
+                <th scope="col">Percapita GDP</th>
+                <th scope="col">Population(millions)</th>
+
               </tr>
             </thead>
             <tbody>
-              {{#each footprint}}
+              {{#each footprints}}
               <tr>
-                <td class="country">{{country}}</td>
-                <td class="year">{{year}}</td>
-                <td class="carbon">{{carbon}}</td>
+                <td class="country">{{this.country}}</td>
+                <td class="unRegion">{{this.unRegion}}</td>
+                <td class="year">{{this.year}}</td>
+                <td class="carbon">{{this.carbon}}</td>
+                <td class="gdp">{{this.perCapitaGDP}}</td>
+                <td class="population">{{this.populations}}</td>
               </tr>
               {{/each}}
             </tbody>
@@ -64,49 +72,3 @@
 
 </div>
 
-{{!-- script block --}}
-
-<script src="http://www.webglearth.com/v2/api.js"></script>
-
-<script>
-
-  $(document).ready(function () {
-
-    // inputs and button functions
-    $("#submit").on("click", function (event) {
-      event.preventDefault;
-
-      var valid = true;
-
-      //form validation function
-      if ($(".country").val() === "" || $(".year").val() === "") {
-
-        valid = false;
-        alert("Please enter search criteria.");
-
-      } else {
-
-        //input values of the date range and country
-        $(".country").val().trim();
-        $(".year").val().trim();
-      }
-
-      //get request from the api and the data set
-      $.get("/countrystats/", function (res) {
-
-        console.log(res);
-
-        $(".country").prepend(res.country);
-        $(".year").prepend(res.year);
-        $(".carbon").prepend(res.carbon);
-
-      }.then(function (results) {
-
-        console.log("its working");
-
-      })
-      )
-    });
-  })
-
-</script>
