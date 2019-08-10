@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "password",
+    "password": "classpass2019!",
     "database": "globalFP_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "password",
+    "password": "classpass2019!",
     "database": "globalFP_db",
     "host": "localhost",
     "dialect": "mysql",

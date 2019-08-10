@@ -1,13 +1,28 @@
-var db = require("../models");
+var db = require("../models/footprint");
 
-module.exports = function(app) {
-  // Get all examples
-  app.get("/footprintstats/", function(req, res) {
-    db.Footprint.findAll({}).then(function(dbRes) {
+module.exports = function (app) {
+  //Get all examples
+  app.get("/footprintstats/", function (req, res) {
+    db.Footprint.findAll({}).then(function (dbRes) {
       res.render("index", { footprint: res });
       console.log("dbres:" + dbRes);
     });
   });
+
+  app.get("/footprintstats/:country", function (req, res) {
+    if (req.params.country) {
+      Country.findOne({
+        where: {
+          routeName: req.params.country
+        }
+      })
+    }
+    // db.Footprint.findOne({ where: { country: req.params.country } }).then(function (footprints) {
+    //   res.render("example", { footprints: footprints });
+    //   console.log("db example: " + JSON.stringify(footprints));
+    // });
+  });
+
 
   // Create a new example
   // app.post("/footprintstats/", function(req, res) {

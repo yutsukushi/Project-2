@@ -2,13 +2,18 @@ DROP DATABASE IF EXISTS globalFP_db;
 CREATE DATABASE globalFP_db;
 USE globalFP_db;
 
-CREATE TABLE footprint(
-    id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+CREATE TABLE footprints(
+	id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     country VARCHAR (100) NOT NULL,
-    UN_region VARCHAR (100) NOT NULL,
+    unRegion VARCHAR (100) NOT NULL,
     year INTEGER NOT NULL,
-    carbon VARCHAR (100) NOT NULL,
-    Percapita_GDP VARCHAR (100) NOT NULL,
+    carbon VARCHAR (20) NOT NULL,
+    perCapitaGDP VARCHAR (20) NOT NULL,
     populations INTEGER (50) NOT NULL
 );
-SELECT * FROM footprint;
+
+DROP DATABASE IF EXISTS testdb;
+CREATE DATABASE testdb;
+
+Select * FROM footprints;
+
