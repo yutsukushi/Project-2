@@ -11,34 +11,15 @@
     // } else if(true) {
       //input values of the country
       var country = $(".country").val().trim();
-      console.log("country", country);
-      // $(".year").val().trim();
-      //var country = $(this).data("country");
-      var unRegion = $(this).data("unRegion");
-      var year = $(this).data("year");
-      var carbon = $(this).data("carbon");
-      var perCapitaGDP = $(this).data("perCapitaGDP");
-      var populations = $(this).data("populations");
 
-      var countrySelect = {
-        country: country,
-        unRegion: unRegion,
-        year: year,
-        carbon: carbon,
-        perCapitaGDP: perCapitaGDP,
-        population: populations
-      }
-      console.log(countrySelect);
       $.ajax("/footprintstats/" + country,
         {
-          type: "GET",
-          data: countrySelect
-
-        }.then(function (results) {
-          console.log(countrySelect);
+          type: "GET"
+        }).then(function (results) {
+          
           console.log("its working", results);
         })
-      );
+      ;
     }
     //get request from the api and the data set
   });

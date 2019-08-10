@@ -1,4 +1,4 @@
-var db = require("../models/footprint");
+var db = require("../models");
 
 module.exports = function (app) {
   //Get all examples
@@ -11,10 +11,12 @@ module.exports = function (app) {
 
   app.get("/footprintstats/:country", function (req, res) {
     if (req.params.country) {
-      Country.findOne({
+      db.Footprint.findOne({
         where: {
-          routeName: req.params.country
+          country: req.params.country
         }
+      }).then(function(dbFootprint) {
+        res.json(dbFootprint);
       })
     }
     // db.Footprint.findOne({ where: { country: req.params.country } }).then(function (footprints) {
