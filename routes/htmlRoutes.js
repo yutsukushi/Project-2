@@ -5,12 +5,9 @@ var db = require("../models");
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    db.Footprint.findAll({}).then(function(footprints) {
-      res.render("index", { footprints: footprints });
-      console.log("db example: " + JSON.stringify(footprints));
-    });
-    // res.render("index");
+    res.render("index", {footprints:[]});
   });
+  
 
   // Load example page and pass in an example by id
   app.get("/:country", function(req, res) {
@@ -19,6 +16,16 @@ module.exports = function(app) {
         footprints: dbFootprint
       });
     });
+  });
+
+  app.post("/", function(req, res) {
+    console.log(req.body.country);
+    db.Footprint.findOne({ where: { country: req.body.country}}).then(function(dbFootprint) {
+      console.log(dbFootprint);
+      res.render("index", {
+        footprints: [dbFootprint.dataValues]
+      })
+    })
   });
 
   // Render 404 page for any unmatched routes
