@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "classpass2019!",
+    "password": "password",
     "database": "globalFP_db",
     "host": "localhost",
     "dialect": "mysql"
