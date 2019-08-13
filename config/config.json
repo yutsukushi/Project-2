@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "Disney=100%",
+    "password": "",
     "database": "globalFP_db",
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": "Disney=100%",
+    "password": "",
     "database": "globalFP_db",
     "host": "localhost",
     "dialect": "mysql",
