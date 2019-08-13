@@ -26,7 +26,7 @@
   </div>
   <div class="col-sm-10">
     {{!-- added this --}}
-    <form method="POST" action="/">
+    <form method="POST" action="/search">
       <div class="input-group mb-3">
         <input class="country" type="text" class="form-control" name="country" placeholder="Country Carbon Footprint">
         <div class="input-group-append">
@@ -34,14 +34,14 @@
         </div>
       </div>
     </form>
-    <form method="POST" action="/">
+    {{!-- <form method="GET" action="/api/electricFP"> --}}
       <div class="input-group mb-3">
         <input class="api" type="text" class="form-control" name="api" placeholder="Your Carbon Footprint">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="submit" id="apiSubmit">Submit</button>
         </div>
       </div>
-    </form>
+    {{!-- </form> --}}
   </div>
   <div class="row">
     <div class="col-sm-10">
