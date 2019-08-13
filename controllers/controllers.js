@@ -9,15 +9,15 @@ module.exports = function(app) {
   });
 
   // Load example page and pass in an example by id
-  app.get("/:country", function(req, res) {
-    db.Footprint.findOne({ where: { country: req.params.country } }).then(
-      function(dbFootprint) {
-        res.render("index", {
-          footprints: dbFootprint
-        });
-      }
-    );
-  });
+  // app.get("/:country", function(req, res) {
+  //   db.Footprint.findOne({ where: { country: req.params.country } }).then(
+  //     function(dbFootprint) {
+  //       res.render("index", {
+  //         footprints: dbFootprint
+  //       });
+  //     }
+  //   );
+  // });
   //var dataFromDB;
 
   app.post("/", function(req, res) {
