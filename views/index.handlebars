@@ -1,74 +1,101 @@
 <div class="container">
-
-  <div class="jumbotron">Tread Lightly</div>
-
   <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-5">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">What is carbon footprint?</h5>
-          <p class="card-text">A carbon footprint database that provides a user their footprint, a different country and
-            overall education on the enviromental impact.</p>
-        </div>
-      </div>
+    <div class="col-lg-9">
+      <div class="title">Tread Lightly</div>
     </div>
-    <div class="col-sm-5">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">What is global hectares?</h5>
-          <p class="card-text">is a measurement unit for quantifying both the ecological footprint of people or
-            activities as well as the biocapacity of the earth or its regions. </p>
-        </div>
-      </div>
+    <div class="col-sm-3">
+      <img src="https://media3.giphy.com/media/3ohhwgrL4KKPIZoTQY/giphy.gif">
     </div>
-    <div class="col-sm-1"></div>
   </div>
-  <div class="col-sm-10">
-    {{!-- added this --}}
+</div>
+<div class="col-lg-12"></div>
+<div class="row">
+  <div class="col-lg-2">
+  </div>
+  <div class="col-lg-4">
     <form method="POST" action="/">
       <div class="input-group mb-3">
-        <input class="country" type="text" class="form-control" name="country" placeholder="Search Country Carbon Footprint">
+        <input class="country" type="text" class="form-control" name="country" placeholder="Search by Country">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="submit" id="submit">Submit</button>
         </div>
       </div>
     </form>
   </div>
-  <div class="row">
-    <div class="col-sm-10">
-      <div class="card">
-        <h5 class="card-header">Carbon Footprint Data</h5>
-        <div class="card-body">
-          <table class="table table-sm table-hover">
-            <thead>
-              <tr>
-                <th scope="col">Country</th>
-                <th scope="col">UN Region</th>
-                <th scope="col">Year</th>
-                <th scope="col">Carbon Footprint</th>
-                <th scope="col">Percapita GDP</th>
-                <th scope="col">Population(millions)</th>
+  <div class="col-md-2"></div>
 
-              </tr>
-            </thead>
-            <tbody>
-              {{#each footprints}}
-              <tr>
-                <td class="country">{{this.country}}</td>
-                <td class="unRegion">{{this.unRegion}}</td>
-                <td class="year">{{this.year}}</td>
-                <td class="carbon">{{this.carbon}}</td>
-                <td class="gdp">{{this.perCapitaGDP}}</td>
-                <td class="population">{{this.populations}}</td>
-              </tr>
-              {{/each}}
-            </tbody>
-          </table>
+  <div class="col-lg-4">
+    <form method="POST" action="/">
+      <div class="input-group mb-3">
+        <input class="user" type="text" class="form-control" name="user" placeholder="Your Footprint">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit" id="submit">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">What is carbon footprint?</h5>
+        <p class="card-text">A carbon footprint database that provides a user their footprint, a different country,
+          and overall education on the enviromental impact.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">What is global hectares?</h5>
+          <p class="card-text"> It is a measurement unit for quantifying both the ecological footprint of people or
+            activities as well as the biocapacity of the earth or its regions.
+            A hectare is a unit of area qual to 10,000 sq meters. </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card">
+            <h5 class="card-header">Carbon Footprint Data</h5>
+            <div class="card-body">
+              <table class="table table-sm table-hover">
+                <thead>
+                  <tr>
+                    <th scope="col">Country</th>
+                    <th scope="col">UN Region</th>
+                    <th scope="col">Year</th>
+                    <th scope="col">Carbon Footprint</th>
+                    <th scope="col">Percapita GDP</th>
+                    <th scope="col">Population(millions)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {{#each footprints}}
+                  <tr>
+                    <td class="country">{{this.country}}</td>
+                    <td class="unRegion">{{this.unRegion}}</td>
+                    <td class="year">{{this.year}}</td>
+                    <td class="carbon">{{this.carbon}}</td>
+                    <td class="gdp">{{this.perCapitaGDP}}</td>
+                    <td class="population">{{this.populations}}</td>
+                  </tr>
+                  {{/each}}
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-
 </div>
-

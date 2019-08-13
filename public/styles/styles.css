@@ -1,3 +1,61 @@
 .list-group-item {
   line-height: 2.5;
 }
+body {
+  background: url("../images/Carbon.jpg");
+  
+}
+.title {
+  font-size: 99px;
+  background-color: white;
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+}
+img {
+  width: 150px; 
+}
+.card-header {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bolder;
+  font-size: 38px;
+}
+.row {
+  margin-left: 2px;
+}
+.col-md-4 {
+  padding: 5px;
+}
+.col-md-12 {
+  padding: 10px;
+}
+.country, .user {
+  text-align: center;
+  font-size: 24px;
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+}
+.card-title {
+  text-align: center;
+  font-family: 'Amatic SC', cursive;
+  font-size: 38px;
+  font-weight: bolder;
+}
+#submit {
+  background-color: green;
+  color: white;
+  font-family: 'Amatic SC', cursive;
+  font-size: 20px;
+}
+.card-text {
+  font-family: 'Amatic SC', cursive;
+  font-size: 24px;
+  font-weight: bolder;
+}
+th {
+  font-family: 'Amatic SC', cursive;
+  font-size: 24px;
+}
+.col-md-2 {
+  opacity: 1.5;
+}
