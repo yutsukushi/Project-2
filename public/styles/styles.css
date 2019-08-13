@@ -59,4 +59,10 @@ th {
 .col-md-2 {
   opacity: 1.5;
 }
+.calcweb {
+  font-family: 'Amatic SC', cursive;
+  color:green;
+  text-align: center !important;
+  font-size: 20px;
+  font-weight: bold;
 }
