@@ -18,35 +18,64 @@ module.exports = function(app) {
   //     }
   //   );
   // });
-  //var dataFromDB;
 
-  app.post("/", function(req, res) {
+  // Posts requested user info on the table
+  app.post("/search", function(req, res) {
     console.log(req.body.country);
     db.Footprint.findOne({ where: { country: req.body.country } }).then(
       function(dbFootprint) {
-        //dataFromDB = dbFootprint.score
         console.log(dbFootprint);
+        var carbonForCountry = dbFootprint.carbon;
         res.render("index", {
           footprints: [dbFootprint.dataValues]
         });
+        addCountryToDB(req.body.country, carbonForCountry);
       }
     );
   });
+  // creates a post on RecentSearch database on the most recent search a user has made.
+  function addCountryToDB(country, carbonForCountry) {
+    // app.post("/api/recentsearch", function(req, res) {
+    db.RecentSearch.create({
+      country: country,
+      carbon: carbonForCountry
+    }).then(function(dbSearchInfo) {
+      console.log(dbSearchInfo);
+    });
+    // })
+  }
+
+  // gets the data that is available on RecentSearch DB
+  // app.get("recentSearches", function(req, res) {
+  //   db.RecentSearch.findAll().then(function(tableRes) {
+  //     res.render("index", {
+  //       RecentSearch: [tableRes.dataValues]
+  //     });
+  //   });
+  // });
 
   // API code
-  // app.post("/", function(req, res){
-  //   var country = req.body.countryName;
-  //    var queryURL =
-  //   axios.get(queryURL, function(data){
-  //     var requeredInfo = {
-  //       averageFootPrint : data.data.avg,
-  //       maxFootPrint: data.data.max,
-  //       dbInfo: dataFromDB.country
-  //     }
-  //     res.render("home", {requeredInfo});
-
-  //   })
-  // } )
+  // app.get("/api/electricFP", function(req, res) {
+  //   console.log(res);
+  // $.ajax({
+  //   queryUrl: "https://api.co2signal.com/v1/latest?countryCode=FR",
+  //   type: "GET",
+  //   dataType: "json",
+  //   headers: {
+  //     "auth-token": "83c13d239527c902"
+  //   }
+  // }).then(function(response) {
+  //   console.log(response);
+  // });
+  //  var queryURL =
+  // axios.get(queryURL, function(data){
+  // var requeredInfo = {
+  //   averageFootPrint : data.data.avg,
+  //   maxFootPrint: data.data.max,
+  //   dbInfo: dataFromDB.country
+  // }
+  // res.render("index", {requeredInfo});
+  // });
 
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
