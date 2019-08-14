@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "",
+    "password": "Dayofcorn1!",
     "database": "globalFP_db",
     "host": "localhost",
     "dialect": "mysql"

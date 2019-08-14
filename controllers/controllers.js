@@ -21,15 +21,22 @@ module.exports = function(app) {
 
   // Posts requested user info on the table
   app.post("/search", function(req, res) {
-    console.log(req.body.country);
+    // console.log(req.body.country);
     db.Footprint.findOne({ where: { country: req.body.country } }).then(
       function(dbFootprint) {
-        console.log(dbFootprint);
+        // console.log(dbFootprint.carbon);
         var carbonForCountry = dbFootprint.carbon;
-        res.render("index", {
-          footprints: [dbFootprint.dataValues]
-        });
+      
+        console.log(req.body.country, carbonForCountry);
+
         addCountryToDB(req.body.country, carbonForCountry);
+
+        db.RecentSearch.findAll().then(function(tableRes) {
+        res.render("index", {
+          footprints: [dbFootprint.dataValues],
+          RecentSearches: tableRes
+        });
+      });
       }
     );
   });
@@ -46,10 +53,10 @@ module.exports = function(app) {
   }
 
   // gets the data that is available on RecentSearch DB
-  // app.get("recentSearches", function(req, res) {
+  // app.get("/recentSearches", function(req, res) {
   //   db.RecentSearch.findAll().then(function(tableRes) {
   //     res.render("index", {
-  //       RecentSearch: [tableRes.dataValues]
+  //       RecentSearches: [tableRes.dataValues]
   //     });
   //   });
   // });
