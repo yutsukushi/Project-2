@@ -8,7 +8,7 @@ body {
 .title {
   font-size: 99px;
   background-color: white;
-  text-align: center;
+  text-align: center !important;
   font-family: 'Amatic SC', cursive;
 }
 .globeGif {
@@ -29,10 +29,12 @@ body {
 }
 .col-md-8 {
   padding-top: 5px;
+  max-width: 66%;
+  margin-right: 10px;
 }
 .searchBar {
   margin: auto;
-  width: 30%;
+  width: 27%;
 }
 .country, .user {
   text-align: center;
@@ -55,6 +57,7 @@ body {
   color: white;
   font-family: 'Amatic SC', cursive;
   font-size: 20px;
+  font-weight: bold;
 }
 .card-text {
   font-family: 'Amatic SC', cursive;
@@ -83,3 +86,16 @@ th {
   text-align: center !important;
   font-weight: bold;
   }
+  input{
+    width: 48%;
+    border-radius: 5px 0px 0px 5px;
+  }
+  .impact {
+    font-family: 'Amatic SC', cursive;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center !important;
+    margin-right: 163px;
+    padding-bottom: 20px;
+  }
+  
