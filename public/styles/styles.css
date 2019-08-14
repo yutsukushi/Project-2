@@ -55,6 +55,7 @@ img {
 th {
   font-family: 'Amatic SC', cursive;
   font-size: 24px;
+  text-align: center;
 }
 .col-md-2 {
   opacity: 1.5;
@@ -63,6 +64,6 @@ th {
   font-family: 'Amatic SC', cursive;
   color:green;
   text-align: center !important;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
 }

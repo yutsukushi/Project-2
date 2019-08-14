@@ -11,9 +11,11 @@
   {{!-- <form method="POST" action="/search"> --}}
 
 </div>
-<div class="col-lg-12"></div>
+{{!-- <div class="col-lg-12"></div> --}}
 <div class="row">
-  <div class="col-lg-2">
+  <div class="col-lg-4">
+  </div>
+  <div class="col-lg-4">
   </div>
   <div class="col-lg-4">
     <form method="POST" action="/">
@@ -25,9 +27,9 @@
       </div>
     </form>
   </div>
-  <div class="col-md-2"></div>
+  {{!-- <div class="col-md-2"></div> --}}
 
-  <div class="col-lg-4">
+  {{!-- <div class="col-lg-4">
     <form method="POST" action="/">
       <div class="input-group mb-3">
         <input class="user" type="text" class="form-control" name="user" placeholder="Your Footprint">
@@ -36,7 +38,7 @@
         </div>
       </div>
   </div>
-  </form>
+  </form> --}}
 
 
   <div class="row">
@@ -44,10 +46,10 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">What is a carbon footprint?</h5>
-          <p class="card-text">A carbon footprint database that provides a user their footprint, a different country,
-            and overall education on the enviromental impact.</p>
+          <p class="card-text">A carbon footprint is historically defined as the total emissions caused by an
+            individual, event, organization, or product, expressed as carbon dioxide equivalent.</p>
           <a href="https://coolclimate.org/calculator" rel="noopener no referrer" target="_blank" class="calcweb"><img
-              src="/images/footprint.jpg" id="eimg" width="80" height="115">
+              src="/images/footprint.jpg" id="eimg" width="45" height="65">
             Carbon Footprint Calculator</a>
         </div>
       </div>
@@ -132,8 +134,9 @@
     {{!-- User stats table --}}
     <div class="container">
       <div class="row">
-        {{!-- <div class="col-md-"></div> --}}
-        <div class="col-md-12">
+        <div class="col-md-4"></div>
+        {{!-- <div class="col-md-1"></div> --}}
+        <div class="col-md-8">
           <div class="card">
             <h5 class="card-header">User Stats</h5>
             <div class="card-body">
@@ -145,7 +148,7 @@
                   </tr>
                 </thead>
                 <tbody>
-                  {{#each footprints}}
+                  {{#each RecentSearches}}
                   <tr>
                     <td class="country">{{this.country}}</td>
                     <td class="carbon">{{this.carbon}}</td>
