@@ -17,9 +17,10 @@ CREATE DATABASE testdb;
 
 Select * FROM footprints;
 
-CREATE TABLE RecentSearch (
+CREATE TABLE RecentSearches (
 	id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
     country VARCHAR (100) NOT NULL,
     carbon VARCHAR (20) NOT NULL
 );
+
 

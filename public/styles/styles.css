@@ -3,7 +3,7 @@
 }
 body {
   background: url("../images/Carbon.jpg");
-  
+  background-repeat: no-repeat;
 }
 .title {
   font-size: 99px;
@@ -11,7 +11,7 @@ body {
   text-align: center;
   font-family: 'Amatic SC', cursive;
 }
-img {
+.globeGif {
   width: 150px; 
 }
 .card-header {
@@ -22,12 +22,17 @@ img {
 }
 .row {
   margin-left: 2px;
+  margin-bottom: 2px;
 }
 .col-md-4 {
   padding: 5px;
 }
-.col-md-12 {
-  padding: 10px;
+.col-md-8 {
+  padding-top: 5px;
+}
+.searchBar {
+  margin: auto;
+  width: 30%;
 }
 .country, .user {
   text-align: center;
@@ -40,6 +45,10 @@ img {
   font-family: 'Amatic SC', cursive;
   font-size: 38px;
   font-weight: bolder;
+}
+.searchHeight {
+  overflow: auto;
+  height: 250px;
 }
 #submit {
   background-color: green;
