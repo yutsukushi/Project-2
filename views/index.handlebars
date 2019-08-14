@@ -18,7 +18,9 @@
   <div class="col-lg-4">
   </div>
   <div class="col-lg-4">
-    <form method="POST" action="/search">
+  
+    <form method="POST" action="/search" onsubmit="getRecentSearch()">
+
       <div class="input-group mb-3">
         <input class="country" type="text" class="form-control" name="country" placeholder="Search by Country">
         <div class="input-group-append">
@@ -150,8 +152,8 @@
                 <tbody>
                   {{#each RecentSearches}}
                   <tr>
-                    <td class="country">{{this.country}}</td>
-                    <td class="carbon">{{this.carbon}}</td>
+                    <td class="country">{{this.dataValues.country}}</td>
+                    <td class="carbon">{{this.dataValues.carbon}}</td>
                   </tr>
                   {{/each}}
                 </tbody>
@@ -162,3 +164,14 @@
       </div>
     </div>
   </div>
+
+  {{!-- <script>
+    function getRecentSearch() {
+      $.ajax({
+        url: "/recentSearches",
+        method: "GET"   
+      }).then(function() {
+        console.log("we did IT");
+      });
+    }
+  </script> --}}
