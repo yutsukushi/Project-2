@@ -1,27 +1,15 @@
 <div class="container">
   <div class="row">
-    <div class="col-lg-9">
-      <div class="title">Tread Lightly</div>
-    </div>
-    <div class="col-sm-3">
-      <img src="https://media3.giphy.com/media/3ohhwgrL4KKPIZoTQY/giphy.gif">
+    <div class="col-lg-12">
+      <div class="title">Tread Lightly<img class="globeGif" src="https://media3.giphy.com/media/3ohhwgrL4KKPIZoTQY/giphy.gif">
+      </div>
     </div>
   </div>
-  {{!-- added this --}}
-  {{!-- <form method="POST" action="/search"> --}}
-
 </div>
-{{!-- <div class="col-lg-12"></div> --}}
 <div class="row">
-  <div class="col-lg-4">
-  </div>
-  <div class="col-lg-4">
-  </div>
-  <div class="col-lg-4">
-  
+  <div class="col-lg-12">
     <form method="POST" action="/search" onsubmit="getRecentSearch()">
-
-      <div class="input-group mb-3">
+      <div class="input-group mb-3 searchBar">
         <input class="country" type="text" class="form-control" name="country" placeholder="Search by Country">
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="submit" id="submit">Submit</button>
@@ -29,20 +17,7 @@
       </div>
     </form>
   </div>
-  {{!-- <div class="col-md-2"></div> --}}
-
-  {{!-- <div class="col-lg-4">
-    <form method="POST" action="/">
-      <div class="input-group mb-3">
-        <input class="user" type="text" class="form-control" name="user" placeholder="Your Footprint">
-        <div class="input-group-append">
-          <button class="btn btn-outline-secondary" type="submit" id="submit">Submit</button>
-        </div>
-      </div>
-  </div>
-  </form> --}}
-
-
+</div>
   <div class="row">
     <div class="col-md-4">
       <div class="card">
@@ -56,9 +31,38 @@
         </div>
       </div>
     </div>
-    <div class="col-md-4"></div>
-    <div class="col-md-4"></div>
-
+      <div class="col-md-8">
+        <div class="card">
+          <h5 class="card-header">Carbon Footprint Data</h5>
+          <div class="card-body">
+            <table class="table table-sm table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">Country</th>
+                  <th scope="col">UN Region</th>
+                  <th scope="col">Year</th>
+                  <th scope="col">Carbon Footprint</th>
+                  <th scope="col">Percapita GDP</th>
+                  <th scope="col">Population(millions)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each footprints}}
+                <tr>
+                  <td class="country">{{this.country}}</td>
+                  <td class="unRegion">{{this.unRegion}}</td>
+                  <td class="year">{{this.year}}</td>
+                  <td class="carbon">{{this.carbon}}</td>
+                  <td class="gdp">{{this.perCapitaGDP}}</td>
+                  <td class="population">{{this.populations}}</td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  </div>
     <div class="row">
       <div class="col-md-4">
         <div class="card">
@@ -70,78 +74,11 @@
           </div>
         </div>
       </div>
-
-      <div class="container">
-        <div class="row">
-          <div class="col-md-8">
-            <div class="card">
-              <h5 class="card-header">Carbon Footprint Data</h5>
-              <div class="card-body">
-                <table class="table table-sm table-hover">
-                  <thead>
-                    <tr>
-                      <th scope="col">Country</th>
-                      <th scope="col">UN Region</th>
-                      <th scope="col">Year</th>
-                      <th scope="col">Carbon Footprint</th>
-                      <th scope="col">Percapita GDP</th>
-                      <th scope="col">Population(millions)</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {{#each footprints}}
-                    <tr>
-                      <td class="country">{{this.country}}</td>
-                      <td class="unRegion">{{this.unRegion}}</td>
-                      <td class="year">{{this.year}}</td>
-                      <td class="carbon">{{this.carbon}}</td>
-                      <td class="gdp">{{this.perCapitaGDP}}</td>
-                      <td class="population">{{this.populations}}</td>
-                    </tr>
-                    {{/each}}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4"></div>
-      </div>
-    </div>
-    {{!-- Space between tables  --}}
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4"></div>
-      </div>
-      <div class="col-md-4"></div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4"></div>
-      </div>
-      <div class="col-md-4"></div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4"></div>
-      </div>
-      <div class="col-md-4"></div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4"></div>
-      </div>
-      <div class="col-md-4"></div>
-    </div>
-    {{!-- User stats table --}}
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4"></div>
-        {{!-- <div class="col-md-1"></div> --}}
+      {{!-- Research searches table --}}
         <div class="col-md-8">
           <div class="card">
-            <h5 class="card-header">User Stats</h5>
-            <div class="card-body">
+            <h5 class="card-header">Recent Searches</h5>
+            <div class="card-body searchHeight">
               <table class="table table-sm table-hover">
                 <thead>
                   <tr>
@@ -161,17 +98,4 @@
             </div>
           </div>
         </div>
-      </div>
     </div>
-  </div>
-
-  {{!-- <script>
-    function getRecentSearch() {
-      $.ajax({
-        url: "/recentSearches",
-        method: "GET"   
-      }).then(function() {
-        console.log("we did IT");
-      });
-    }
-  </script> --}}
