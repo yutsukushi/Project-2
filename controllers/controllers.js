@@ -1,17 +1,13 @@
 var db = require("../models");
-var connection = require("../config/connection.js");
+require("../config/connection.js");
 // this file should just display each page route on webpage
 
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    connection.query("SELECT * FROM footprints;", function(err) {
-      if (err) {
-        throw err;
-      }
-      res.render("index", { footprints: [] });
-    });
+    res.render("index", { footprints: [] });
   });
+
   // Posts requested user info on the table
   app.post("/search", function(req, res) {
     db.Footprint.findOne({ where: { country: req.body.country } }).then(
